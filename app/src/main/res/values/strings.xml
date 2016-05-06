@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Control</string>
+    <string name="explanation">explanation</string>
+    <string name="new_extractedittext">New Extract Edit Text</string>
+    <string name="Information">Information</string>
+    <string name="Information_All">Information on all</string>
+    <string name="title_activity_activity_info_in">In the organisation</string>
+    <string name="title_activity_activity_info_out">Not in the organization</string>
+    <string name="exit">Exit</string>
+</resources>
