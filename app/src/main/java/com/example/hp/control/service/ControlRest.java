@@ -1,5 +1,7 @@
 package com.example.hp.control.service;
 
+import android.support.annotation.NonNull;
+
 import com.example.hp.control.BuildConfig;
 import com.example.hp.control.imterface.ControlService;
 
@@ -17,10 +19,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ControlRest {
 
-    public static final String HTTPS_ENDPOINT = "http://10.0.2.2:8080/reminders";
-    public static final String HTTP_ENDPOINT = "http://10.0.2.2:8080/reminders";
-    public static final String PROD_ENDPOINT = "http://10.0.2.2:8080/reminders";
-    public static final String PROD_ENDPOINT_V2 = "http://10.0.2.2:8080/reminders";
+    public static final String HTTPS_ENDPOINT = "http://192.168.0.102:8080/control/";
+    public static final String HTTP_ENDPOINT = "http://192.168.0.102:8080/control/";
+    public static final String PROD_ENDPOINT = "http://192.168.0.102:8080/control/";
+    public static final String PROD_ENDPOINT_V2 = "http://192.168.0.102:8080/control/";
 
     private static final int READ_TIMEOUT_SECONDS = 20;
     private static final int CONNECT_TIMEOUT_SECONDS = 20;
@@ -45,6 +47,7 @@ public class ControlRest {
         return getProdService();
     }
 
+    @NonNull //добавлено после сломанного сервера
     private static Retrofit getAdapter(String endpoint) {
 
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();

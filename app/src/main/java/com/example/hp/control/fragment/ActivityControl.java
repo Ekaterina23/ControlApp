@@ -20,12 +20,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.example.hp.control.R;
+
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
 
-public class ActivityControl extends AppCompatActivity implements View.OnClickListener{
+public class ActivityControl extends AppCompatActivity implements View.OnClickListener {
 
     public static final String MIME_TEXT_PLAIN = "text/plain";
     public static final String TAG = "NfcDemo";
@@ -33,7 +35,7 @@ public class ActivityControl extends AppCompatActivity implements View.OnClickLi
     private TextView mTextView = null;
     private EditText mEditText = null;
     private NfcAdapter mNfcAdapter = null;
-    Button bInfo;
+    Button bInfo, bStatistic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class ActivityControl extends AppCompatActivity implements View.OnClickLi
         mEditText = (EditText) findViewById(R.id.editText);
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
         bInfo = (Button) findViewById(R.id.bInfo);
+        bStatistic = (Button) findViewById(R.id.bStatistic);
         bInfo.setOnClickListener(this);
 
         if (mNfcAdapter == null) {
@@ -95,9 +98,7 @@ public class ActivityControl extends AppCompatActivity implements View.OnClickLi
 
     @Override
     protected void onPause() {
-        /*
-         * Call this before onPause, otherwise an IllegalArgumentException is thrown as well.
-         */
+
         stopForegroundDispatch(this, mNfcAdapter);
 
         super.onPause();

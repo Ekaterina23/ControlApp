@@ -19,6 +19,7 @@ public class ActivityInfoAll extends AppCompatActivity {
         id = (TextView) findViewById(R.id.id);
         title = (TextView) findViewById(R.id.title);
         remindDate = (TextView) findViewById(R.id.remindDate);
+        ControlRest.getService();
 
     }
 
